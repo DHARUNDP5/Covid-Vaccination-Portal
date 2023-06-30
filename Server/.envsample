@@ -1,7 +1,0 @@
-NODE_ENV = development
-PORT = 5000
-MONGO_URI = ''
-JWT_SECRET = abc123
-adminEmail = 'admin-covid-vaccination@email.org'
-adminPassword = 'Admin@1234'
-adminId = '507f191e810c19729de860ea'
