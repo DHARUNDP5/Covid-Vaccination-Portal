@@ -13,24 +13,24 @@ function AdminLogin() {
 
   const { email, password } = formData
 
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const navigate1 = useNavigate()
+  const dispatch1 = useDispatch()
 
-  const { admin, isLoading, isError, isSuccess, message } = useSelector(
-    (state1) => state1.auth
+  const { admin, isLoading1, isError1, isSuccess1, message1 } = useSelector(
+    (state1) => state1.auth1
   )
 
   useEffect(() => {
-    if (isError) {
-      toast.error(message)
+    if (isError1) {
+      toast.error(message1)
     }
 
-    if (isSuccess || admin) {
-      navigate('/centres')
+    if (isSuccess1 || admin) {
+      navigate1('/centres')
     }
 
-    dispatch(reset1())
-  }, [admin, isError, isSuccess, message, navigate, dispatch])
+    dispatch1(reset1())
+  }, [admin, isError1, isSuccess1, message1, navigate1, dispatch1])
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -47,10 +47,10 @@ function AdminLogin() {
       password,
     }
 
-    dispatch(login1(adminData))
+    dispatch1(login1(adminData))
   }
 
-  if (isLoading) {
+  if (isLoading1) {
     return <Spinner />
   }
 

@@ -1,6 +1,6 @@
-import React from 'react'
-
 const AdminSearch= () => {
+
+  
     return (
         <div>
         </div>

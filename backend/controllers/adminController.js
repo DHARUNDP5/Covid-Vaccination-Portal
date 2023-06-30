@@ -65,7 +65,7 @@ const removeCentre = asyncHandler(async (req, res) => {
 
 const centreDetails= asyncHandler(async (req, res) => {
 
-  const centre = await Centre.find().select('-_id')
+  const centre = await Centre.find()
 
   res.status(200).json({ centre })
 

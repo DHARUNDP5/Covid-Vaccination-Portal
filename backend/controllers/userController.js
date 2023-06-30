@@ -49,17 +49,17 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error('Email is not valid')
   }
 
-  if (aadharNumber.length!=12 || !aadharNumber.isNumber()) {
+  if (aadharNumber.length!=12 || isNaN(aadharNumber)) {
     res.status(400)
     throw new Error('Aadhar number is invalid')
   }
 
-  if (mobileNumber.length!=10 || !mobileNumber.isNumber()) {
+  if (mobileNumber.length!=10 || isNaN(mobileNumber)) {
     res.status(400)
     throw new Error('Only Indian mobile numbers with 10 digit is allowed')
   }
 
-  if (pincode.length!=10 || !pincode.isNumber()) {
+  if (pincode.length!=6 || isNaN(pincode)) {
     res.status(400)
     throw new Error('Pincode must be a 6-digit number')
   }
@@ -152,4 +152,11 @@ const apply = asyncHandler(async (req, res) => {
   }
 })
 
-module.exports = { registerUser, loginUser, self, apply }
+const getApply = asyncHandler(async (req, res) => {
+  
+  const response = await Apply.find({user: req.user.id})
+
+  res.status(200).json(response)
+})
+
+module.exports = { registerUser, loginUser, self, apply, getApply }

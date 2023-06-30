@@ -18,14 +18,14 @@ function App() {
       <Router>
           <Header />
           <Routes>
-            <Route path='*' element={<Home/>} />
+            {/* <Route path='*' element={<Home/>} />
             <Route path='/login' element={<Login />} />
             <Route path='/signUp' element={<SignUp />} />
-            <Route path='/search' element={<Search />} />
+            <Route path='/search' element={<Search />} /> */}
             <Route path='/apply' element={<Apply />} />
-            <Route path='/adminlogin' element={<AdminLogin />} />
+            {/* <Route path='/adminlogin' element={<AdminLogin />} />
             <Route path='/centres' element={<AdminCentres />} />
-            <Route path='/adminsearch' element={<AdminSearch />} />   
+            <Route path='/adminsearch' element={<AdminSearch />} />    */}
           </Routes>
           <Footer />
       </Router>

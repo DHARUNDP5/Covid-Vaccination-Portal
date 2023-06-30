@@ -9,7 +9,7 @@ const Header = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const { user,admin } = useSelector((state) => state.auth)
+    const { user} = useSelector((state) => state.auth)
   
     const onLogout = () => {
       dispatch(logout())
@@ -17,10 +17,13 @@ const Header = () => {
       navigate('/home')
     }
 
+    const navigate1 = useNavigate()
+    const dispatch1 = useDispatch()
+    const { admin } = useSelector((state1) => state1.auth1)
     const onLogout1 = () => {
-        dispatch(logout1())
-        dispatch(reset1())
-        navigate('/home')
+        dispatch1(logout1())
+        dispatch1(reset1())
+        navigate1('/home')
       }
 
     return (
@@ -36,7 +39,7 @@ const Header = () => {
                 <div className="flex items-center">
                     <div className="pt-[23px] pb-[22px] pr-[30px] text-[20px] text-[#2B2A85]">
                         <ul className="flex gap-[30px] font-semibold ">
-                            <a className=" p-1 hover:rounded hover:bg-gradient-to-b from-[#282B85] to-[#9A1D80]
+                            <a className=" pb-2 hover:rounded hover:bg-gradient-to-b from-[#282B85] to-[#9A1D80]
                             hover:text-white" href="/">Home</a>
                             
                              {admin ? (
@@ -54,15 +57,20 @@ const Header = () => {
             </li>
           </>
         )}
-                             <a className=" p-1 hover:rounded hover:bg-gradient-to-b from-[#282B85] to-[#9A1D80]
+                             <a className=" pb-2 hover:rounded hover:bg-gradient-to-b from-[#282B85] to-[#9A1D80]
                             hover:text-white" href="/search">Centres</a>
-                            {user ? (
+                            {user ? (<>
           <li>
             <button onClick={onLogout} className=" p-1 hover:rounded hover:bg-gradient-to-b from-[#282B85] to-[#9A1D80]
                             hover:text-white">
               User Logout
             </button>
           </li>
+                      <li>
+                      <a className=" p-1 hover:rounded hover:bg-gradient-to-b from-[#282B85] to-[#9A1D80]
+                                      hover:text-white" href="/apply">Apply</a>
+                      </li></>
+          
         ) : (
           <>
             <li>

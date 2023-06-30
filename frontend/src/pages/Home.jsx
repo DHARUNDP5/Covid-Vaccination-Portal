@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Home = () => {
     return (
         <div className='h-[732px]  w-screen bg-background bg-cover'>
